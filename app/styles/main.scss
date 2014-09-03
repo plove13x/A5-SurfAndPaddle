@@ -1,0 +1,479 @@
+// Color Variables (didn't see enough rhyme or reason to set these to a next level of variables such as "$primaryColor"...):
+
+$darkBlue: RGBA(11, 53, 80, 1);
+$lightBlue: RGBA(25, 111, 177, 1);
+$lavenderGray: RGBA(186, 198, 207, 1);
+$shuttleGray: RGBA(94, 104, 111, 1);
+$casper: RGBA(163, 179, 190, 1);
+$lightGray: RGBA(211, 211, 211, 1);
+
+
+* {
+  outline: 1px solid green;
+  margin: 0 auto;
+  font-size: 100%;
+}
+
+header {
+  height: 523px;
+  background: url("images/background.png");
+  background-size: 100% 100%;
+}
+
+div.topbar {
+  margin: 0 auto;
+  width: 1028px;         /*990px on .png but not wide enough apparently*/
+  position: relative;
+}
+
+.tllogo {
+  display: inline-block;
+  width: 250px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-top: 0.5em;
+
+    a {
+      text-decoration: none;
+      color: $darkBlue;
+    }
+}
+
+.makeimgmdl {
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.trnavcontainer {
+  display: inline-block;
+  width: 141px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  position: absolute;
+  top: 1.2em;
+  right: 1.8em;
+  text-align: right;
+  /*float: right;
+  margin-right: 10em;         May not be the best way to move this to the right in a responsive manner...*/
+
+    li {
+      display: inline;
+    }
+
+    li:first-of-type {
+      margin-right: 1.15em;
+    }
+
+    li a {
+      color: $darkBlue;
+      text-decoration: none;
+    }
+
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 1.25em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 6.5em;
+  font-weight: normal;
+  letter-spacing: -0.03em;          /*  -4px when I measured it in px  */
+}
+
+h3 {
+  font-family: 'Myriad', sans-serif;
+  text-align: center;
+  margin-top: -1em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: $darkBlue;
+}
+
+div.main {
+  height: 1007px;            /*unnecessary?*/
+  width: 975px;         /*893px total content + 82px margin*/
+}
+
+article {
+  display: inline-block;
+  width: 615px;
+  margin-right: 82px;             /*Starting here (article) thru "p" I accidentally started using px instead of em. Should go back and convert (somewhere between 15-17 times is pixel:em right now...)*/
+  vertical-align: top;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+article h2 {
+  font-size: 4em;
+  letter-spacing: -0.8px;
+  line-height: 70px;
+  font-weight: 500;
+  margin-top: 62px;
+  color: $darkBlue;
+}
+
+.byline {
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 4px;
+  font-size: 0.8em;
+
+    img {
+      border-radius: 22px;
+      margin-top: 2px;
+      margin-left: 4px;
+      /*vertical-align: middle;*/
+    }
+
+    .bylinetext {
+      display: inline-block;
+      padding-bottom: 7px;
+      vertical-align: middle
+    }
+
+    a {             /*Move this, .mleft, & .underline up a couple of pixels by putting them all in one container and using padding?*/
+      margin-left: 8px;
+      color: $lightBlue;
+      text-decoration: none;
+    }
+
+    .mleft {
+      margin-left: 15px;
+      color: $lavenderGray;
+    }
+
+    /*I considered leaving ".underline" below out of the nest, as it seemed reasonable I might use it later even though I didn't on Surf & Paddle...*/
+
+    .underline {
+      text-decoration: underline;
+      margin-left: 3px;
+      color: $lavenderGray;
+    }
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  margin-top: 30px;
+  font-weight: 300;
+  line-height: 1.6em;
+  color: $shuttleGray;
+}
+
+.chic {
+  text-decoration: underline;
+  color: $casper;
+}
+
+.aliqua {
+  text-decoration: underline;
+  color: $lightBlue;
+}
+
+blockquote {
+  font-size: 1.7em;
+  padding: 0.5em 0 0.25em 0.5em;
+  border-left: 2.5px solid $lightGray;
+  margin-left: 0.25em;
+  margin-top: 0.7em;
+  font-family: 'Open Sans', sans-serif;
+  color: $lightBlue;
+}
+
+.postfeedback {
+  margin-top: 1.5em;
+
+    li{         /*Need to combine the img and span effects below so the hover of either affects both simultaneously...*/
+      display: inline;
+    }
+
+    img{
+      background: $shuttleGray;
+      transition-duration: 2s;
+      padding: 0.25em;
+    }
+
+    img:hover{
+      background: $darkBlue;
+      transition-duration: 1s;
+      /*  transition: background 1s;          Same as above line of code? */
+    }
+
+    span{
+      color: white;
+      background: $casper;
+      transition-duration: 2s;
+      margin-left: 0.05em;
+      padding: 0.5em;
+    }
+
+    span:hover{
+      background: $lightBlue;
+      transition-duration: 1s;
+    }
+
+}
+
+aside{
+  display: inline-block;
+  width: 278px;    /*px correct?*/
+}
+
+.annemarie img{
+  border-radius: 84px;    /*MIGHT NEED WORK, MIGHT NOT... */
+  display: block;
+  margin-top: 83px;
+}
+
+.annemarie h4{
+  text-align: center;
+  margin-top: 0.75em;
+  font-family: 'Open Sans', sans-serif;
+  color: $lightBlue;
+}
+
+.amsocial ul{
+  display: block;
+  text-align: center;
+}
+
+.amsocial li{
+  display: inline;
+  color: $lavenderGray;
+  padding: 0 0.5em;
+}
+
+.ad img{          /*Could take this out, just thought I'd try to use it + clear the ad link below...*/
+  float: left;
+  margin-top: 3.1em;
+}
+
+.ad a{
+  display: block;
+  clear: left;
+  text-align: right;
+  padding-top: 0.25em;
+  font-family: 'Oswald', sans-serif;
+  color: $lavenderGray;
+}
+
+aside h2 {
+  margin-top: 2.4em;
+  font-size: 1.1em;
+  color: $lightBlue;
+}
+
+aside p {
+  margin-top: 0.5em;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+  line-height: 1.9em;
+  color: $lavenderGray;
+}
+
+footer {
+  height: 573px;
+}
+
+footer h2 {
+  font-size: 4em;
+  text-align: center;
+  margin-top: 0.41em;
+  margin-bottom: 0.41em;
+  color: $darkBlue;
+}
+
+.postimgsquares {
+
+    li {
+      display: inline-block;    /*vs. inline?*/
+      width: 25%;           /*width: 325px;*/
+      height: 330px;
+      vertical-align: bottom;     /*Try narrowing the width of the page without this and you'll see you need it altho tough to fully grasp why.*/
+      position: relative;
+    }
+
+    li a {         /*Need to make these rollover to white as well upon hover*/
+      font-size: 2em;
+      font-family: 'Oswald', sans-serif;
+      text-decoration: none;
+      position: absolute;
+      bottom: 0.3em;
+      left: 0.5em;
+      line-height: 1.2em;
+      color: $darkBlue;
+    }
+}
+
+
+/* TRYING HELP FROM SARA...
+
+
+linear-gradient(
+    rgba(128, 128, 0, 0), rgba(128, 128, 0, 0)
+    ),
+    url(images/sq1.jpg) center center; */
+
+  /*transition: background 2s ease;*/
+
+  /*background: linear-gradient(
+    rgba(128, 128, 0, 0), rgba(128, 128, 0, 0)
+    ),
+    url(images/sq2.jpg) center center; transition-property: background;
+
+
+.one:hover{
+  background: linear-gradient(
+    rgba(128, 128, 0, 0.5), rgba(128, 128, 0, 0.5)
+    ),
+    url(images/sq1.jpg); center center; transition-duration: 2s;
+}
+    */
+
+
+/*JAKENOTES: set a property (position: absolute; left: 0;)
+then transition-property: left would mean the property left:0 is what will change.
+[you can also use margin, padding, etc. instead of just position]
+
+then by having a class set to whatever the selector was, you’ll go:
+
+.animate-class {
+  left: 100px;*/
+
+
+@mixin imgsqhover($class, $imgLoc) {
+
+  $class {
+    background: url($imgLoc);
+    opacity: 0.2;
+    transition-duration: 1.5s;
+  }
+
+  $class:hover {
+    opacity: 1;
+    transition-duration: 3s;
+  }
+
+}
+
+.one {
+  @include imgsqhover(.one, "images/sq1.jpg");
+}
+
+.two {
+  @include imgsqhover(.two, "images/sq2.jpg");
+}
+
+.three {
+  @include imgsqhover(.three, "images/sq3.jpg");
+}
+
+/*.one {
+  background: url("images/sq1.jpg");
+  opacity: 0.2;
+  transition-duration: 1.5s;
+}
+
+.one:hover {
+  opacity: 1;
+  transition-duration: 3s;
+}
+
+.two {
+  background: url("images/sq2.jpg");
+  opacity: 0.2;
+  transition-duration: 1.5s;
+}
+
+.two:hover {
+  opacity: 1;
+  transition-duration: 3s;
+}
+
+.three {
+  background: url("images/sq3.jpg");
+  opacity: 0.2;
+  transition-duration: 1.5s;
+}
+
+.three:hover {
+  opacity: 1;
+  transition-duration: 3s;
+}
+
+*/
+
+.four {
+  background: url("images/sq3.jpg");      /*PROOF NOT UPDATING THE MIXIN/ORIGINAL TRANSITIONS (OR ANYTHING BELOW)...*/
+  opacity: 0.2;
+  transition-duration: 1.5s;
+}
+
+.four:hover {
+  opacity: 1;
+  transition-duration: 3s;
+}
+
+.bottomproperfooter {
+  background-color: $darkBlue;
+
+}
+
+.ftrcontentarea {
+  margin: 0 auto;
+  position: relative;
+  height: 97px;
+  width: 972px;
+  color: $lavenderGray;
+
+  /*padding: 0 12.5% 0 12.7%;*/
+  /*text-align: center;*/
+  /*width: 100%;*/
+  /*font-size: 1em;*/
+}
+
+.copyrightportion {
+  display: inline-block;
+  width: 358px;       /*75% better for responsive design (or maybe 12.5% for each side's padding or margin)?*/
+  position: absolute;
+  top: 13px;
+  font-size: 0.75em;
+
+    img {
+      margin-left: -1em;
+    }
+
+    span {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.12em;
+      vertical-align: middle;         /*necessary?*/
+    }
+
+}
+
+.brnav {
+  display: inline-block;
+  width: 317px;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: 43px;
+
+  /*float: right;*/         /*Could try either position: absolute (+relative above) or float: right. Is this the right selector for where I should institute float for this menu?*/
+  /*width: 24.385%;*/
+
+    li {
+      display: inline;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95em;
+    }
+
+}
