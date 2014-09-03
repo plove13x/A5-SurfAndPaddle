@@ -9,7 +9,7 @@ $lightGray: RGBA(211, 211, 211, 1);
 
 
 * {
-  outline: 1px solid green;
+  outline: 1px solid chartreuse;
   margin: 0 auto;
   font-size: 100%;
 }
@@ -103,7 +103,7 @@ div.main {
 article {
   display: inline-block;
   width: 615px;
-  margin-right: 82px;             /*Starting here (article) thru "p" I accidentally started using px instead of em. Should go back and convert (somewhere between 15-17 times is pixel:em right now...)*/
+  margin-right: 5.1em;
   vertical-align: top;
 }
 
@@ -113,39 +113,39 @@ h2 {
 
 article h2 {
   font-size: 4em;
-  letter-spacing: -0.8px;
-  line-height: 70px;
+  letter-spacing: -0.01em;
+  line-height: 1.1em;
   font-weight: 500;
-  margin-top: 62px;
+  margin-top: 0.98em;
   color: $darkBlue;
 }
 
 .byline {
   font-family: 'Open Sans', sans-serif;
-  margin-top: 4px;
+  margin-top: 0.2em;
   font-size: 0.8em;
 
     img {
       border-radius: 22px;
-      margin-top: 2px;
-      margin-left: 4px;
+      margin-top: 0.2em;
+      margin-left: 0.4em;
       /*vertical-align: middle;*/
     }
 
     .bylinetext {
       display: inline-block;
-      padding-bottom: 7px;
+      padding-bottom: 0.7em;
       vertical-align: middle
     }
 
     a {             /*Move this, .mleft, & .underline up a couple of pixels by putting them all in one container and using padding?*/
-      margin-left: 8px;
+      margin-left: 0.5em;
       color: $lightBlue;
       text-decoration: none;
     }
 
     .mleft {
-      margin-left: 15px;
+      margin-left: 1.2em;
       color: $lavenderGray;
     }
 
@@ -153,7 +153,7 @@ article h2 {
 
     .underline {
       text-decoration: underline;
-      margin-left: 3px;
+      margin-left: 0.3em;
       color: $lavenderGray;
     }
 }
@@ -161,7 +161,7 @@ article h2 {
 p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-  margin-top: 30px;
+  margin-top: 1.9em;
   font-weight: 300;
   line-height: 1.6em;
   color: $shuttleGray;
@@ -239,23 +239,23 @@ aside{
   color: $lightBlue;
 }
 
-.amsocial ul{
+.amsocial ul {
   display: block;
   text-align: center;
 }
 
-.amsocial li{
+.amsocial li {
   display: inline;
   color: $lavenderGray;
   padding: 0 0.5em;
 }
 
-.ad img{          /*Could take this out, just thought I'd try to use it + clear the ad link below...*/
-  float: left;
+.ad img {
+  float: left;          /*Could take this out, just thought I'd try to use it + clear the ad link below...*/
   margin-top: 3.1em;
 }
 
-.ad a{
+.ad a {
   display: block;
   clear: left;
   text-align: right;
@@ -349,77 +349,31 @@ then by having a class set to whatever the selector was, you’ll go:
   left: 100px;*/
 
 
-@mixin imgsqhover($class, $imgLoc) {
-
-  $class {
+@mixin imgsqhover($imgLoc) {
     background: url($imgLoc);
     opacity: 0.2;
     transition-duration: 1.5s;
-  }
 
-  $class:hover {
+    &:hover {
     opacity: 1;
     transition-duration: 3s;
-  }
-
+    }
 }
 
 .one {
-  @include imgsqhover(.one, "images/sq1.jpg");
+  @include imgsqhover("images/sq1.jpg");
 }
 
 .two {
-  @include imgsqhover(.two, "images/sq2.jpg");
+  @include imgsqhover("images/sq2.jpg");
 }
 
 .three {
-  @include imgsqhover(.three, "images/sq3.jpg");
+  @include imgsqhover("images/sq3.jpg");
 }
-
-/*.one {
-  background: url("images/sq1.jpg");
-  opacity: 0.2;
-  transition-duration: 1.5s;
-}
-
-.one:hover {
-  opacity: 1;
-  transition-duration: 3s;
-}
-
-.two {
-  background: url("images/sq2.jpg");
-  opacity: 0.2;
-  transition-duration: 1.5s;
-}
-
-.two:hover {
-  opacity: 1;
-  transition-duration: 3s;
-}
-
-.three {
-  background: url("images/sq3.jpg");
-  opacity: 0.2;
-  transition-duration: 1.5s;
-}
-
-.three:hover {
-  opacity: 1;
-  transition-duration: 3s;
-}
-
-*/
 
 .four {
-  background: url("images/sq3.jpg");      /*PROOF NOT UPDATING THE MIXIN/ORIGINAL TRANSITIONS (OR ANYTHING BELOW)...*/
-  opacity: 0.2;
-  transition-duration: 1.5s;
-}
-
-.four:hover {
-  opacity: 1;
-  transition-duration: 3s;
+  @include imgsqhover("images/sq4.jpg");
 }
 
 .bottomproperfooter {
@@ -434,10 +388,10 @@ then by having a class set to whatever the selector was, you’ll go:
   width: 972px;
   color: $lavenderGray;
 
-  /*padding: 0 12.5% 0 12.7%;*/
-  /*text-align: center;*/
-  /*width: 100%;*/
-  /*font-size: 1em;*/
+  /*padding: 0 12.5% 0 12.7%;
+  text-align: center;
+  width: 100%;
+  font-size: 1em;*/
 }
 
 .copyrightportion {
