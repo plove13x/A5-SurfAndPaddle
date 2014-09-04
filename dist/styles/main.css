@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid chartreuse;
+  outline: 1px solid green;
   margin: 0 auto;
   font-size: 100%; }
 
@@ -10,7 +10,7 @@ header {
 
 div.topbar {
   margin: 0 auto;
-  width: 1028px;
+  max-width: 1028px;
   /*990px on .png but not wide enough apparently*/
   position: relative; }
 
@@ -70,14 +70,15 @@ h3 {
   color: RGBA(11, 53, 80, 1); }
 
 div.main {
-  height: 1007px;
+  min-height: 1007px;
   /*unnecessary?*/
-  width: 975px;
-  /*893px total content + 82px margin*/ }
+  max-width: 975px;
+  /*893px total content + 82px margin*/
+  margin: 0 auto; }
 
 article {
   display: inline-block;
-  width: 615px;
+  max-width: 615px;
   margin-right: 5.1em;
   vertical-align: top; }
 
@@ -145,31 +146,41 @@ blockquote {
   color: RGBA(25, 111, 177, 1); }
 
 .postfeedback {
-  margin-top: 1.5em; }
+  margin-top: 1.5em;
+  margin-left: 0.3em; }
   .postfeedback li {
-    /*Need to combine the img and span effects below so the hover of either affects both simultaneously...*/
-    display: inline; }
-  .postfeedback img {
-    background: RGBA(94, 104, 111, 1);
-    transition-duration: 2s;
-    padding: 0.25em; }
-  .postfeedback img:hover {
+    display: inline;
+    margin-right: 0.5em;
+    height: 30px;
+    /*?*/ }
+    .postfeedback li.rc {
+      width: 158px; }
+    .postfeedback li.rl {
+      width: 128px; }
+    .postfeedback li.stp {
+      width: 154px; }
+    .postfeedback li img {
+      background: RGBA(94, 104, 111, 1);
+      transition-duration: 2s;
+      width: 30px;
+      height: 30px; }
+    .postfeedback li span {
+      color: white;
+      background: RGBA(163, 179, 190, 1);
+      transition-duration: 2s;
+      padding: 0.3em 0.6em 0.45em 0.7em;
+      /*This is a bit ridiculous. Would really like to see how you would have coded this. Border-box?*/ }
+  .postfeedback li:hover img {
     background: RGBA(11, 53, 80, 1);
     transition-duration: 1s;
     /*  transition: background 1s;          Same as above line of code? */ }
-  .postfeedback span {
-    color: white;
-    background: RGBA(163, 179, 190, 1);
-    transition-duration: 2s;
-    margin-left: 0.05em;
-    padding: 0.5em; }
-  .postfeedback span:hover {
+  .postfeedback li:hover span {
     background: RGBA(25, 111, 177, 1);
     transition-duration: 1s; }
 
 aside {
   display: inline-block;
-  width: 278px;
+  max-width: 278px;
   /*px correct?*/ }
 
 .annemarie img {
@@ -190,8 +201,11 @@ aside {
 
 .amsocial li {
   display: inline;
-  color: RGBA(186, 198, 207, 1);
   padding: 0 0.5em; }
+
+.amsocial li a {
+  color: RGBA(186, 198, 207, 1);
+  text-decoration: none; }
 
 .ad img {
   float: left;
@@ -317,7 +331,7 @@ then by having a class set to whatever the selector was, you’ll go:
   margin: 0 auto;
   position: relative;
   height: 97px;
-  width: 972px;
+  max-width: 972px;
   color: RGBA(186, 198, 207, 1);
   /*padding: 0 12.5% 0 12.7%;
   text-align: center;
@@ -329,7 +343,7 @@ then by having a class set to whatever the selector was, you’ll go:
   width: 358px;
   /*75% better for responsive design (or maybe 12.5% for each side's padding or margin)?*/
   position: absolute;
-  top: 13px;
+  top: 17px;
   font-size: 0.75em; }
   .copyrightportion img {
     margin-left: -1em; }
@@ -345,11 +359,22 @@ then by having a class set to whatever the selector was, you’ll go:
   text-align: right;
   position: absolute;
   right: 0;
-  top: 43px;
+  top: 39px;
   /*float: right;*/
   /*Could try either position: absolute (+relative above) or float: right. Is this the right selector for where I should institute float for this menu?*/
   /*width: 24.385%;*/ }
   .brnav li {
-    display: inline;
+    display: inline; }
+  .brnav li a {
     font-family: 'Open Sans', sans-serif;
-    font-size: 0.95em; }
+    font-size: 0.95em;
+    text-decoration: none;
+    color: RGBA(186, 198, 207, 1); }
+
+@media (max-width: 1024px) {
+  article {
+    margin: 0 auto;
+    display: block; }
+  aside {
+    display: block;
+    margin: 0 auto; } }

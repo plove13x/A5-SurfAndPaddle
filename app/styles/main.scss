@@ -9,7 +9,7 @@ $lightGray: RGBA(211, 211, 211, 1);
 
 
 * {
-  outline: 1px solid chartreuse;
+  outline: 1px solid green;
   margin: 0 auto;
   font-size: 100%;
 }
@@ -22,7 +22,7 @@ header {
 
 div.topbar {
   margin: 0 auto;
-  width: 1028px;         /*990px on .png but not wide enough apparently*/
+  max-width: 1028px;         /*990px on .png but not wide enough apparently*/
   position: relative;
 }
 
@@ -96,13 +96,14 @@ h3 {
 }
 
 div.main {
-  height: 1007px;            /*unnecessary?*/
-  width: 975px;         /*893px total content + 82px margin*/
+  min-height: 1007px;            /*unnecessary?*/
+  max-width: 975px;         /*893px total content + 82px margin*/
+  margin: 0 auto;
 }
 
 article {
   display: inline-block;
-  width: 615px;
+  max-width: 615px;
   margin-right: 5.1em;
   vertical-align: top;
 }
@@ -189,50 +190,70 @@ blockquote {
 
 .postfeedback {
   margin-top: 1.5em;
+  margin-left: 0.3em;
 
-    li{         /*Need to combine the img and span effects below so the hover of either affects both simultaneously...*/
+    li {         
       display: inline;
+      margin-right: 0.5em;
+      height: 30px;   /*?*/
+
+      &.rc {
+        width: 158px;
+      }
+
+      &.rl {
+        width: 128px;
+      }
+
+      &.stp {
+        width: 154px;
+      }
+
+      img {
+        background: $shuttleGray;
+        transition-duration: 2s;
+        width: 30px;
+        height: 30px;
+      }
+
+      span {
+        color: white;
+        background: $casper;
+        transition-duration: 2s;
+        padding: 0.3em 0.6em 0.45em 0.7em;          /*This is a bit ridiculous. Would really like to see how you would have coded this. Border-box?*/
+      }
+
     }
 
-    img{
-      background: $shuttleGray;
-      transition-duration: 2s;
-      padding: 0.25em;
-    }
+      li:hover {
 
-    img:hover{
-      background: $darkBlue;
-      transition-duration: 1s;
+        img {
+          background: $darkBlue;
+          transition-duration: 1s;
       /*  transition: background 1s;          Same as above line of code? */
-    }
+        }
 
-    span{
-      color: white;
-      background: $casper;
-      transition-duration: 2s;
-      margin-left: 0.05em;
-      padding: 0.5em;
-    }
+        span {
+          background: $lightBlue;
+          transition-duration: 1s;
+        }
 
-    span:hover{
-      background: $lightBlue;
-      transition-duration: 1s;
-    }
+      }
 
 }
 
-aside{
+aside {
   display: inline-block;
-  width: 278px;    /*px correct?*/
+  max-width: 278px;    /*px correct?*/
 }
 
-.annemarie img{
+.annemarie img {
   border-radius: 84px;    /*MIGHT NEED WORK, MIGHT NOT... */
   display: block;
   margin-top: 83px;
 }
 
-.annemarie h4{
+.annemarie h4 {
   text-align: center;
   margin-top: 0.75em;
   font-family: 'Open Sans', sans-serif;
@@ -246,8 +267,12 @@ aside{
 
 .amsocial li {
   display: inline;
-  color: $lavenderGray;
   padding: 0 0.5em;
+}
+
+.amsocial li a {
+  color: $lavenderGray;
+  text-decoration: none;
 }
 
 .ad img {
@@ -385,7 +410,7 @@ then by having a class set to whatever the selector was, you’ll go:
   margin: 0 auto;
   position: relative;
   height: 97px;
-  width: 972px;
+  max-width: 972px;
   color: $lavenderGray;
 
   /*padding: 0 12.5% 0 12.7%;
@@ -398,7 +423,7 @@ then by having a class set to whatever the selector was, you’ll go:
   display: inline-block;
   width: 358px;       /*75% better for responsive design (or maybe 12.5% for each side's padding or margin)?*/
   position: absolute;
-  top: 13px;
+  top: 17px;
   font-size: 0.75em;
 
     img {
@@ -419,15 +444,33 @@ then by having a class set to whatever the selector was, you’ll go:
   text-align: right;
   position: absolute;
   right: 0;
-  top: 43px;
+  top: 39px;
 
   /*float: right;*/         /*Could try either position: absolute (+relative above) or float: right. Is this the right selector for where I should institute float for this menu?*/
   /*width: 24.385%;*/
 
     li {
       display: inline;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 0.95em;
     }
 
+    li a {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95em;
+      text-decoration: none;
+      color: $lavenderGray;
+    }
+
+}
+
+@media (max-width: 1024px) {
+  
+  article {
+    margin: 0 auto;
+    display: block;
+  }
+
+  aside {
+    display: block;
+    margin: 0 auto;
+  }
 }
